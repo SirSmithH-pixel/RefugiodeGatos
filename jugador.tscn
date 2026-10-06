@@ -1,22 +1,41 @@
 [gd_scene format=3 uid="uid://bvqfujgservf0"]
 
-[ext_resource type="Texture2D" uid="uid://c4rclurljkaf1" path="res://personajemujer2.png" id="1_16k11"]
 [ext_resource type="Script" uid="uid://d3cr7eanff7ub" path="res://jugador.gd" id="1_omvyu"]
+[ext_resource type="Texture2D" uid="uid://bpfblpsfrksnq" path="res://personajecamina6.png" id="2_ukil5"]
+[ext_resource type="Texture2D" uid="uid://djhnuk31rrdtx" path="res://personajecamina5.png" id="3_7st5j"]
+[ext_resource type="Texture2D" uid="uid://la6sd7doh6pa" path="res://personajecamina7.png" id="4_cvhml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shl25"]
 size = Vector2(338, 482)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_418nn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ukil5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7st5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cvhml")
+}],
+"loop": 1,
+"name": &"caminar_derecha",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1243018903]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_omvyu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=958920886]
-position = Vector2(4, 1)
-scale = Vector2(1.0039057, 0.98828125)
-texture = ExtResource("1_16k11")
-region_enabled = true
-region_rect = Rect2(164, 49, 338, 490)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351479988]
 position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_shl25")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=290558626]
+sprite_frames = SubResource("SpriteFrames_418nn")
+animation = &"caminar_derecha"
+frame_progress = 0.9482368
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=350873954]
