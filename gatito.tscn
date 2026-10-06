@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://csxqsitxx0uf8"]
+
+[ext_resource type="Script" uid="uid://bryiygbm76k14" path="res://gatito.gd" id="1_ipxfl"]
+[ext_resource type="Texture2D" uid="uid://ccytginwh1eps" path="res://icon.svg" id="1_u0faj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_418nn"]
+radius = 45.221676
+
+[node name="Gatito" type="Area2D" unique_id=1994398573]
+script = ExtResource("1_ipxfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=522496491]
+modulate = Color(0.78703606, 0.6139593, 0.22117999, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_u0faj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772936676]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_418nn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

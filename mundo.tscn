@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b8knqyir6dlxu"]
+
+[ext_resource type="PackedScene" uid="uid://bvqfujgservf0" path="res://jugador.tscn" id="1_lgngo"]
+[ext_resource type="PackedScene" uid="uid://csxqsitxx0uf8" path="res://gatito.tscn" id="2_fw4w5"]
+
+[node name="Mundo" type="Node2D" unique_id=1286217469]
+
+[node name="CharacterBody2D" parent="." unique_id=1243018903 instance=ExtResource("1_lgngo")]
+position = Vector2(60, 565)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=20770059]
+
+[node name="Gatito" parent="." unique_id=1994398573 instance=ExtResource("2_fw4w5")]
+position = Vector2(578, 594)
